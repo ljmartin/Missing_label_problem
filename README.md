@@ -21,12 +21,12 @@ updates of the ChEMBL database as med chemists and pharmacologists test the inte
  selective pressure on the ligands to have common properties, and so the ligands from each site should be treated separately in the label matrix.
  
  In this paper we took a statistical approach and showed solutions to these two problems _without_ requiring mass in vitro screening 
- to fill in the missing interactions or mass crystallization to determine binding sites. 
+ to fill in the missing interactions or mass crystallization to determine the binding sites. 
  
  To show the improvements we needed a performance metric that is robust to bias. Many ligands in these databases come from 
  SAR studies, where sometimes one or two atoms are the only difference. As such, the data is no longer i.d.d. and random-split 
  cross-validation is now recognised to be a high-bias
- evaluation technique. We use a technique that is akin to leave-one-out cross validation, but instead we leave out entire scaffolds at a time. 
+ evaluation technique. We use a technique that is akin to leave-one-out cross validation, but instead we leave out entire scaffolds at a time. The scaffolds are defined by Dice distance to a central ligand, and we determined an appropriate cut-off using Gaussian mixture models. 
  Because there are odd distributions of the scaffolds associated with each target, we bootstrap the evaluation until the metric converges.
  
  ## Code
