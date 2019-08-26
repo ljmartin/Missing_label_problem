@@ -9,7 +9,8 @@ LBVS uses featurized molecule instances called molecular fingerprints to fit a m
 map unseen instances into a set of labels describing the protein targets that the ligand binds to. The matrix made up of
 the label vectors is typically very sparse as a result of having large numbers of ligands, each of which only binds to a small number of proteins.
 
-Unfortunately the label matrix is also incomplete, with two types of missing labels - we use the ChEMBL database as an example.
+Unfortunately the label matrix is also incomplete, with two types of missing labels. This reduces the ability of 
+machine learning models to rank ligands in the correct order, and hasn't been widely recognised. We use the ChEMBL database as an example.
 * a vast majority of protein-ligand interactions in ChEMBL 
 have not been tested experimentally yet. Some of those interactions are actually true positives that 
 haven't been found yet, as evidenced by the continued 
