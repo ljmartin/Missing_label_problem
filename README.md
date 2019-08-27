@@ -5,7 +5,7 @@ by Martin LJ and Bowen MT 2019.
 ## Layout
 Each folder has data or code + explanatory notebooks:
 * 'TheData' has the dataset used - molecular fingerprints and label vectors from ChEMBL.
-* 'Part_1' demonstrates our scaffold-removal technique that reduces bias during performance evaluation. 
+* 'Part_1' demonstrates our block bootstrapping technique that reduces bias during performance evaluation. 
 * 'Part_2' contains the code used to fill in missing labels based on correlations between targets.
 * 'Part_3' contains the code for unsupervised clustering of ligand sets into their binding sites. 
 
