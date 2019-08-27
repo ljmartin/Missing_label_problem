@@ -33,8 +33,8 @@ updates of the ChEMBL database as med chemists and pharmacologists test the inte
  To show the improvements we needed a performance metric that is robust to bias. Many ligands in these databases come from 
  SAR studies, where sometimes one or two atoms are the only difference. As such, the data is no longer i.d.d. and random-split 
  cross-validation is now recognised to be a high-bias
- evaluation technique. We use a technique that is akin to leave-one-out cross validation, but instead we leave out entire scaffolds at a time. The scaffolds are defined by Dice distance to a central ligand, and we determined an appropriate cut-off using Gaussian mixture models. 
- Because there are odd distributions of the scaffolds associated with each target, we bootstrap the evaluation until the metric converges.
+ evaluation technique. We use a technique that is akin to leave-one-out cross validation, but instead we leave out blocks of highly correlated ligands. The blocks are defined by Dice distance to a central ligand, and we determined an appropriate cut-off using Gaussian mixture models. 
+ Because there are odd and multidimensional distributions of the correlations between ligands, we bootstrap the evaluation until the metric converges.
  
  ## Code
  All of the code used in this paper is available along with notebooks describing each step. The bootstrapping technique mentioned above 
