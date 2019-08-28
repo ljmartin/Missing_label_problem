@@ -7,4 +7,4 @@ Includes:
 
 * already calculated data from `run_comparison.py` in `comparison_full` 
 
-* `negatives.csv` which we use to show that 0.01 % (not fraction) of ligands predicted by the label correlation matrix approach are actual known negatives. 
+* `negatives.csv` which we use to show that only 0.01 % of ligands predicted by the label correlation matrix approach are actual known negatives. 
