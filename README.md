@@ -1,5 +1,5 @@
 # Missing_label_problem
-Data and analysis scripts for the paper "The missing label problem: Addressing false assumptions improves ligand-based virtual screening"
+Data and analysis scripts for the paper "The missing label problem: Addressing false assumptions improves ligand-based virtual screening" by Martin LJ and Bowen MT, 2019 (link to chemrxiv goes here)[en.wikipedia.org]
 
 
 ## Layout
