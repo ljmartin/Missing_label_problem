@@ -1,4 +1,6 @@
-# Part 2.
+# Filling in missing labels
+
+Creating a matrix made up of protein/ligand interaction data leads to a sparse matrix with many zeros. A large majority of these zeros aren't true negatives - they are simply unknown interactions. Most machine learning algorithms see a zero as an explicit negative, leading to incorrect mapping functions. Here, we fill in missing labels using the correlation between similar labels, show that these labels are consistent with the ground truth labels, and then scrape assay data from pubchem showing that many of the predicted labels are actually correct! 
 
 Includes: 
 * Ipython notebook showing how label correlations can be used to fill in missing labels, and how filling in those labels subsequently improves ligand based virtual screening. 
