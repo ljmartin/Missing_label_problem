@@ -1,4 +1,4 @@
-# Part 3
+# Binding sites
 
 Demonstrating how to use clustering and merging to group ligand sets into their binding sites, which improves lbvs. 
 
