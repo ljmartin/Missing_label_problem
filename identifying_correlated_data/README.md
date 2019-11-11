@@ -1,3 +1,3 @@
-# Part 1. 
+# Identifying correlated data
 
-IPython notebook for identifying highly correlated, non-iid data in molecular bioactivity databases
+Molecular bioactivity databases often have some highly similar instances that were derived from a single instance. Because of this, they do not resemble iid data. This holds an IPython notebook for identifying highly correlated, non-iid data in molecular bioactivity databases
