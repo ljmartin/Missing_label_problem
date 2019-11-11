@@ -1,6 +1,6 @@
 # Binding sites
 
-Demonstrating how to use clustering and merging to group ligand sets into their binding sites, which improves lbvs. 
+Many interaction databases lack information about where a ligand binds. If there are multiple binding sites, the similar property principle no longer applies, since there is no expectation that different binding sites on a protein should have the same shape. The attached files demonstrate how to use clustering and merging to identify ligand sets coming from multiple binding sites, and then group those ligand sets into their binding sites. This shows improved lbvs. 
 
 Includes:
 * Ipython notebook demonstrating analysis of the pre-computed results, as well as a demo of clustering a GABA-A Receptor ligand set with 4 binding sites.
