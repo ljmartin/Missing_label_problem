@@ -45,16 +45,17 @@ updates of the ChEMBL database as med chemists and pharmacologists test the inte
 x = #load up 2d numpy array of fingerprints
 y = #load up 2d multi-label array of label vectors
 
-vb = VirtualScreeningBootstrapper(x, y_new, BernoulliNB(), numNegs=0.1)
+vsbs = VirtualScreeningBootstrapper(x, y, BernoulliNB(), numNegs=0.1)
 
 distance_cutoff = 0.525 #dice distance of the nearest neighbours cutoff
 number_of_repeats = 150 #how many times to try repeating.
 jobs_per_repeat = 16 #how many cores to run on. Don't run a classifier that using multiple cores if you use this
 early_stopping_threshold = 2.5 #percentage threshold for convergence of the median ranking loss. 
-target_ID = 0 #choose any column number of the multi-label array of label vectors, each column corresponding to a protein target. 
+target_ID = 0 #choose any column number of the multi-label array of label vectors, where
+              #each column corresponds to a protein target as per the standard sklearn format. 
 
 #measure block bootstrapped ranking losses
-rlosses = vsbs.bootStrap(targ, 
+rlosses = vsbs.bootStrap(target_ID, 
     distance_cutoff, 
     number_of_repeats, 
     tolerance=early_stopping_threshold, 
