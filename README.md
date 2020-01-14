@@ -26,7 +26,7 @@ machine learning models to rank ligands in the correct order, and hasn't been wi
 * a vast majority of protein-ligand interactions in ChEMBL 
 have not been tested experimentally yet. Some of those interactions are actually true positives that 
 haven't been found yet, as evidenced by the continued 
-updates of the ChEMBL database as med chemists and pharmacologists test the interactions and publish results
+updates of the ChEMBL database as med chemists and pharmacologists test new interactions and publish the results
  in the literature. It is important to recognise this, because common machine learning scoring functions treat the 0's in the label matrix as explicit negatives, when often they are just unknown! This affects both how you evaluate with a scoring metric (missing label problem settings benefit from reporting 'ranking loss' rather than precision/recall) and how the model gets fit. 
  
  In this paper we took a statistical approach and showed solutions to these two problems _without_ requiring mass in vitro screening 
