@@ -6,4 +6,5 @@ We use Morgan fingerprints with radius 2, of size 256. While this is typically s
 * `y.npz` is a (252409, 243) sparse matrix containing the label vectors
 * `allSmiles.csv` contains the the SMILES codes for the 252,409 ligands, as they appear in ChEMBL24
 * `targetNames.csv` contains the common name of the 243 protein targets, as they appear in ChEMBL24
+* `allLigands.csv` and `target_IDs.csv` are the chemblIDs of the ligands and targets
 
