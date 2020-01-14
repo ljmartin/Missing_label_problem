@@ -20,14 +20,14 @@ the label vectors is typically very sparse as a result of having large numbers o
 
 Unfortunately the label matrix is also incomplete, with two types of missing labels. This reduces the ability of 
 machine learning models to rank ligands in the correct order, and hasn't been widely recognised or addressed. We use the ChEMBL database as an example.
+ * binding site labels are unknown. Many proteins have multiple binding sites. From the similar property principle we expect
+ all ligands within a binding site to have some common properties. If they bind to different sites, there is no longer any 
+ selective pressure on the ligands to have common properties, and so the ligands from each site should be treated separately in the label matrix. This is a form of ['hidden stratification'](https://arxiv.org/abs/1909.12475)
 * a vast majority of protein-ligand interactions in ChEMBL 
 have not been tested experimentally yet. Some of those interactions are actually true positives that 
 haven't been found yet, as evidenced by the continued 
 updates of the ChEMBL database as med chemists and pharmacologists test the interactions and publish results
- in the literature. 
- * binding site labels are unknown. Many proteins have multiple binding sites. From the similar property principle we expect
- all ligands within a binding site to have some common properties. If they bind to different sites, there is no longer any 
- selective pressure on the ligands to have common properties, and so the ligands from each site should be treated separately in the label matrix.
+ in the literature. It is important to recognise this, because common machine learning scoring functions treat the 0's in the label matrix as explicit negatives, when often they are just unknown! This affects both how you evaluate with a scoring metric (missing label problem settings benefit from reporting 'ranking loss' rather than precision/recall) and how the model gets fit. 
  
  In this paper we took a statistical approach and showed solutions to these two problems _without_ requiring mass in vitro screening 
  to fill in the missing interactions or mass crystallization to determine the binding sites. 
@@ -35,8 +35,8 @@ updates of the ChEMBL database as med chemists and pharmacologists test the inte
  To show the improvements we needed a performance metric that is robust to bias. Many ligands in these databases come from 
  SAR studies, where sometimes one or two atoms are the only difference. As such, the data is no longer i.d.d., and random-split 
  cross-validation is now recognised to be a high-bias
- evaluation technique. We use a technique that is akin to leave-one-out cross validation, but instead we leave out blocks of highly correlated ligands. The blocks are defined by Dice distance to a central ligand, and we determined an appropriate distance cut-off to measure out one 'block' using Gaussian mixture models. 
- Because there are odd and multidimensional distributions of the correlations between ligands, we bootstrap the evaluation until the metric converges. Hence: block bootstrapping.
+ evaluation technique. We use a technique that is akin to leave-one-out cross validation, but instead we leave out blocks of highly correlated ligands. The blocks are defined by Dice distance to a central ligand, and we determined an appropriate distance cut-off to measure out one 'block' using Gaussian mixture models that determines 'correlated' from 'uncorrelated' instance pairs.
+ Because the distances are highly multidimensional, and the distributions of the correlations between ligands are thus not cleanly separable, it is not enough to cluster the ligands just once and perform k-fold CV. Instead, we bootstrap the evaluation until the metric converges. Hence: block bootstrapping.
  
  ## Code
  All of the code used in this paper is available along with notebooks describing each step. The block bootstrapping technique mentioned above 
