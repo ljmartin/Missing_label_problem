@@ -9,7 +9,7 @@ Each folder has data or code + explanatory notebooks:
 * 'data' has the dataset used - molecular fingerprints and label vectors from ChEMBL.
 * 'identifying_correlated_data' demonstrates our block bootstrapping technique that reduces bias during performance evaluation. 
 * 'binding_sites' contains the code for unsupervised clustering of ligand sets into their binding sites. 
-* 'filling_in_missing_labels' contains the code used to fill in missing labels based on correlations between targets.
+* 'filling_in_missing_labels' contains the code used to fill in missing labels based on correlations between targets. In addition, there is a notebook with a demonstration of scraping PubChem assay data to validate the predicted labels.
 
 
 ## Blurb:
