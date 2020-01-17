@@ -10,3 +10,5 @@ Includes:
 * already calculated data from `run_comparison.py` in `comparison_full` 
 
 * `negatives.csv` which we use to show that only 0.01 % of ligands predicted by the label correlation matrix approach are actual known negatives. 
+
+* `finding_puchem.ipynb`, which demonstrates downloading assay data from PubChem to check the validity of the predicted labels
